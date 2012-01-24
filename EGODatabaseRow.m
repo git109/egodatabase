@@ -103,10 +103,5 @@
     return [NSDate dateWithTimeIntervalSince1970:[self doubleForColumnIndex:columnIndex]];
 }
 
-- (void)dealloc {
-	// [result release];
-	[columnData release];
-	[super dealloc];
-}
 
 @end

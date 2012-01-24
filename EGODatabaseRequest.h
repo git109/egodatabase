@@ -45,16 +45,16 @@ typedef enum {
 	NSString* query;
 	EGODatabase* database;
 	EGODatabaseRequestKind requestKind;
-	id<EGODatabaseRequestDelegate> delegate;
+	id<EGODatabaseRequestDelegate> __unsafe_unretained delegate;
 }
 
 - (id)initWithQuery:(NSString*)aQuery;
 - (id)initWithQuery:(NSString*)aQuery parameters:(NSArray*)someParameters;
 
 @property(nonatomic,assign) NSInteger tag;
-@property(nonatomic,retain) EGODatabase* database;
+@property(nonatomic,strong) EGODatabase* database;
 @property(nonatomic,assign) EGODatabaseRequestKind requestKind;
-@property(nonatomic,assign) id<EGODatabaseRequestDelegate> delegate;
+@property(nonatomic,unsafe_unretained) id<EGODatabaseRequestDelegate> delegate;
 @end
 
 @protocol EGODatabaseRequestDelegate<NSObject>
